@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+.header img {
+    height: 50px;
+}
+.header .nav-links {
+    display: flex;
+    align-items: center;
+}
+.header .nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+.header .nav-links .language {
+    background-color: #00a2e8;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.header .nav-links .logout {
+    color: #ff0000;
+}
+
+.header1 {
+    background-color: #00a2e8;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #00a2e8;
+    padding: 10px 0;
+}
+.tab {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.tab.active {
+    background-color: #00a2e8;
+    border-radius: 5px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+}
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+.form-header {
+    background-color: #00a2e8;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 18px;
+}
+.form-body {
+    padding: 20px;
+}
+.form-body p {
+    margin: 0 0 20px;
+    color: #757575;
+}
+.form-body input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.form-body button {
+    background-color: #00a2e8;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+.form-body button:hover {
+    background-color: #00a2e8;
+}

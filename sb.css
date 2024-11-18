@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+.header img {
+    height: 50px;
+}
+.header .nav-links {
+    display: flex;
+    align-items: center;
+}
+.header .nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+.header .nav-links .language {
+    background-color: #006400;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.header .nav-links .logout {
+    color: #ff0000;
+}
+.nav-bar {
+    background-color: #00a2e8;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nav-bar a i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.content {
+    display: flex;
+    padding: 20px;
+}
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.sidebar h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+.main-content {
+    flex: 1;
+    margin-left: 20px;
+}
+.main-content .breadcrumb {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.main-content .account-info {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+.main-content .account-info h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.main-content .account-info .account-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.main-content .account-info .account-item .card {
+    font-size: 24px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #0073e6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.main-content .account-info .account-item a {
+    text-decoration: none;
+    color: #0073e6;
+    font-size: 16px;
+}
+.profile-status {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+.profile-status .status-bar {
+    background-color: #00a2e8;
+    height: 10px;
+    width: 80%;
+}
+.welcome {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer {
+    background-color: #0073e6;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
