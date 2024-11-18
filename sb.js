@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    //  Smooth Fade-In for Elements
+    //  Smooth Fade-In for Elements for
     const fadeInElements = document.querySelectorAll('.welcome, .breadcrumb, .account-info, .sidebar a');
     fadeInElements.forEach((element, index) => {
         element.style.opacity = 0;
