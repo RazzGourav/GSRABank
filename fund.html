@@ -40,12 +40,40 @@
         <div class="form-container">
             <div class="form-header">Payment</div>
             <div class="form-body">
-                <input type="text" placeholder="Account code">
-                <input type="text" placeholder="Amount">
-                <button>FINISH</button>
+                <input type="text" id="toUsername" placeholder="Recipient UserName" required>
+                <input type="number"  id="Account" placeholder="Account Number" required>
+                <input type="number"  id="amount" placeholder="Amount" required>
+                <button type="submit">Transfer</button>
             </div>
         </div>
     </div>
-    <!-- helodo -->
+    <script>document.getElementById('transferForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const token = localStorage.getItem('token'); // Retrieve saved token
+        const toUsername = document.getElementById('toUsername').value;
+        const amount = document.getElementById('amount').value;
+      
+        try {
+          const response = await fetch('http://localhost:5000/api/transactions/transfer', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ toUsername, amount }),
+          });
+      
+          if (response.ok) {
+            alert('Transfer successful!');
+          } else {
+            const error = await response.json();
+            alert(`Error: ${error.error}`);
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Transfer failed.');
+        }
+      });
+      </script>
 </body>
 </html>
