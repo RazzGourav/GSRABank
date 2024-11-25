@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./customerRegister.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./logo.gsra.jpg" alt="Online Banking Logo">
+            <h1>GSRA Bank</h1>
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Developers-Contact</a></li>
+                
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <button class="login-button">
+                <a href="./customer.html"></a>Login Customer</button>
+            <button class="login-button">Login Admin
+                <a href="./index.html"></a>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- Form -->
+<main>
+    
+    
+    <div class="container">
+        
+    <section class="register-form">
+        <fieldset>
+            <legend>Customer Registration</legend>
+        <div class="admin-logo">
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="admin-regi">
+            <h2>Customer Registration</h2>
+        </div>
+        <div class="register-form">
+            <!-- left part -->
+            <div class="register-left">
+                <form >
+                    <label for="full-name">first Name</label>
+                    <input type="text" id="full-name" name="fname" placeholder="Enter full name" required>
+
+                    <label for="DOB">Date Of Birth</label>
+                    <input type="date" id="DOB" name="fdob" required>
+
+                    <label for="email-id">Email-id</label>
+                    <input type="email" id="email-id" name="fmail" placeholder="abc@gmail.com" required>
+                    <br>
+
+                    <select name="branch" id="branch-b">
+                        <option value="select" disabled selected>Select Center</option>
+                        <option value="Patna">Bhilai</option>
+                        <option value="Mumbai">Patna</option>
+                        <option value="Bangalore">Balgalore</option>
+                        <option value="Sikkim">Sikkim</option>
+                    </select>
+                    <br><br>
+
+                    <label for="address" required>Present Address</label>
+                    <textarea id="address" name="faddress" placeholder="Enter Present address" required></textarea>
+                    
+                </form>
+            </div>
+            <!-- right part -->
+            <div class="register-right">
+                <form id="signupForm">
+                    <label for="user-name">User-Name</label>
+                    <input type="text" id="username" name="fuser-name" placeholder="Enter username name" required>
+
+                    <label for="MOB">Mobile No.</label>
+                    <input type="tel" id="MOB" name="fMOB" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="fpassword" placeholder="Enter password" required>
+                    <br>
+
+                    <select name="exam-center" id="center" required>
+                        <option value="select" disabled selected>Select gender:</option>
+                        <option value="Patna">Male</option>
+                        <option value="Mumbai">Female</option>
+                        <option value="Bangalore">Other</option>
+                    </select>
+                    <br><br>
+
+                    <label for="address" required>Present Address</label>
+                    <textarea id="address" name="faddress" placeholder="Enter Present address" required></textarea>
+                </form>
+            </div>
+        </div>
+         <button type="submit">
+               Register 
+            </button>
+    </section>
+    
+    </div>
+    
+
+</main>
+</fieldset>
+<script>
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  try {
+    const response = await fetch('http://localhost:5500/api/auth/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password }),
+    });
+
+    if (response.ok) {
+      alert('Signup successful!');
+      window.location.href = './customer.html';
+    } else {
+      const error = await response.json();
+      alert(`Error: ${error.message}`);
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Signup failed.');
+  }
+});
+
+</script>
+</body>
+</html>

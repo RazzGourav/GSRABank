@@ -1,0 +1,182 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./bgi3.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+.navbar {
+    background-color: #0D090A;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-right>a{
+    color: #0D090A;
+}
+.logo{
+    display: flex;
+}
+.logo>h1{
+    position: relative;
+    left: 8%;
+}
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar-center ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-center ul li {
+    margin-right: 20px;
+}
+
+.navbar-center ul li a {
+    color: #EAF2EF;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.navbar-right .login-button {
+    background-color: #EAF2EF;
+    color: #0D090A ;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.navbar-right:hover .login-button:hover{
+    cursor: pointer;
+    background-color: #912F56;
+    color: #EAF2EF;
+    transition: 0.5s ease;
+    transform: scale(1.1);
+}
+@media(max-width:990px){
+    
+    .nav{
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+    }
+    .navbar-center>a{
+        font-size: 0.8rem;
+    }
+    .logo{
+        width: 35vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .navbar-center{
+        width: 20vw;
+    }
+    .navbar-right{
+        display: flex;
+        justify-content: space-between;
+        width: 20vw;
+    }
+}
+main {
+    padding: 20px;
+}
+.para{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10rem;
+    width: 70vw;
+    
+}
+.para>p{
+    position: relative;
+    top: 30%;
+    font-size: 2rem ;
+    font-weight: 400;
+    transition: 0.5s ease;
+    transform: scale(1.1);
+}
+    .para span::before{
+        content: "GSRA Bank";
+        color: #521945;
+        animation: words 20s infinite;
+    }
+    
+    .para span::after{
+        content: "";
+        position: absolute;
+        width: calc(100% + 8px);
+        font-size: 2.3rem;
+        height: 100%;
+        border-left: 3px solid black;
+        right: -8;
+        animation: cursor 0.6s infinite;
+    }
+    
+    @keyframes cursor{
+        to{
+            border-left: 3px solid #3d2645;
+        }
+    }
+    
+    @keyframes words{
+        0%, 20%{
+            content: "Build with trust";
+        }
+        21%, 40%{
+            content: "Be risk free";
+        }
+        41%, 60%{
+            content: "Learn basics of banking";
+        }
+        61%, 80%{
+            content: "GSRA Banks";
+        }
+        81%, 100%{
+            content: "One stop solution";
+        }
+    }
+    @media(max-width:990px){
+        .para>p{
+            font-size: 1.5rem;
+        }
+        .para{
+            display: flex;
+            width: 30vw;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .para span::after{
+            content: "";
+            position: absolute;
+            width: calc(100% + 8px);
+            font-size: 2.3rem;
+            font-weight: 400;
+            height: 20%;
+            border-left: 3px solid black;
+            right: -8;
+            animation: cursor 0.6s infinite;
+        }
+        
+    }
+    
+
