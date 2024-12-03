@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Fund Transfer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./fund.css">
+</head>
+<body>
+    <div class="header">
+        <img alt="GSRA BANKS Logo" height="50" src="./images/logo.jpg" width="100" />
+        <div class="nav-links">
+            <a href="#">What's New</a>
+            <a href="#">About GSRA</a>
+            <a href="#">Registration Forms</a>
+            <a class="language" href="#">Language</a>
+            <a class="logout" href="./index.html">
+                <i class="fas fa-power-off"></i> LOGOUT
+            </a>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <a href="./sb.html" class="tab">HOME</a>
+        <a href="./fund.html" class="tab active">Transfer</a>
+        <a href="./ac.html" class="tab">Account Info</a>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">Payment</div>
+            <div class="form-body">
+                <form id="transferForm">
+                    <input type="text" id="receiver" required placeholder="Recipient Username">
+                    <input type="text" id="sender" required placeholder="Sender Username">
+                    <input type="number" id="amount" required placeholder="Amount">
+                    <button type="submit">Transfer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('transferForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const receiver = document.getElementById('receiver').value.trim();
+            const sender = document.getElementById('sender').value.trim();
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            // Validation
+            if (!receiver || !sender || !amount || isNaN(amount) || amount <= 0) {
+                alert('Please provide valid inputs for all fields.');
+                return;
+            }
+
+            const token = localStorage.getItem('token') || '';
+            if (!token) {
+                alert('User not authenticated. Please log in.');
+                return;
+            }
+
+            try {
+                // API request
+                const response = await fetch('http://localhost:5500/api/transactions/transfer', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+        sender: sender,    // Ensure the field name matches backend
+        receiver: receiver, // Ensure the field name matches backend
+        amount: amount
+    }),
+                });
+
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Transfer successful!');
+                    // Optionally, clear the form
+                    document.getElementById('transferForm').reset();
+                } else {
+                    console.error('Transfer error:', data.message);
+                    alert(`Error: ${data.message}`);
+                }
+            } catch (err) {
+                console.error('Network error:', err);
+                alert('Failed to process the transfer. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>

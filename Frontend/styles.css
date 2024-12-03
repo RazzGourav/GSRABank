@@ -32,7 +32,7 @@ body{
 }
 .logo>h1{
     position: relative;
-    left: 8%;
+    margin-left: 25px;
 }
 .navbar .logo img {
     height: 50px;

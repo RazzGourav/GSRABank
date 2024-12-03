@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin login</title>
-    <link rel="stylesheet" href="./admin.css">
+    <title>LoginCustomer</title>
+    <link rel="stylesheet" href="./customer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -37,25 +37,32 @@
             <i class="fa fa-user"></i>
         </div>
         <div class="customer-login">
-            <h2>Admin Login</h2>
+            <h2>Customer Login</h2>
         </div>
         <div class="register-form">
-        <form>
-            <label for="acc-no.">Usename</label>
-            <input type="text" id="acc-no." name="facc-no." required placeholder="Username">
+        <form id="loginForm">
+            <label for="acc-no.">Username</label>
+            <input type="text" id="username" name="facc-no." required placeholder="Username">
 
             <label for="pin">Password</label>
-            <input type="number" id="pin" name="fpin" required placeholder="Enter 4 digits security pin">
+            <input type="password" id="password" name="fpin" required placeholder="Enter 4 digits security pin">
 
             <button type="submit">
-                 Login Admin
+                Login
             </button>
             <br/>
             <br/>
             <a href="#">
             Forgot Password?
              </a>
+            <div class="signup-text">
+                <br/>
+            Don't have account 
+            <br/>
             
+            <a href="./customerRegister.html">
+            SignUp
+            </a>
         </form>
     </div>
     </section>

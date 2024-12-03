@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Deposit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./deposit.css">
+    <script src="./deposit.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <img alt="GSRA BANKS Logo" height="50" src="./images/logo.jpg" width="100" />
+        <div class="nav-links">
+            <a href="#">What's New</a>
+            <a href="#">About GSRA</a>
+            <a href="#">Registration Forms</a>
+            <a class="language" href="#">Language</a>
+            <a class="logout" href="./index.html">
+                <i class="fas fa-power-off"></i> LOGOUT
+            </a>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <a href="./sb.html" class="tab">HOME</a>
+        <a href="./deposit.html" class="tab active">Deposit</a>
+        <a href="./ac.html" class="tab">Account Info</a>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">Deposit</div>
+            <div class="form-body">
+                <form id="transferForm">
+                    <input type="text" id="Username" required placeholder="Username">
+                    <input type="number" id="amount" required placeholder="Amount">
+                    <button type="submit">Deposit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
