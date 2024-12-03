@@ -2,7 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose'); 
 const User = require('./models/User'); 
 
-const mongoURI = process.env.MONGO_URI || 'mongodb+srv://darkgods:Darkgods@cluster0.moku5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = process.env.MONGO_URI || 'mongodb+srv://username:password@cluster0.moku5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 const createDefaultUsers = async () => {
   try {
